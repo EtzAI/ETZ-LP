@@ -2,12 +2,11 @@
 
 import type React from "react"
 
-import { useTheme } from "next-themes"
 import Earth from "./ui/globe"
 import ScrambleHover from "./ui/scramble"
 import { FollowerPointerCard } from "./ui/following-pointer"
 import { motion, useInView } from "framer-motion"
-import { Suspense, useEffect, useRef, useState } from "react"
+import { Suspense, useRef, useState } from "react"
 import { geist } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -15,23 +14,15 @@ import { Button } from "@/components/ui/button"
 export default function Features() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
-  const { theme } = useTheme()
   const [isHovering, setIsHovering] = useState(false)
   const [isCliHovering, setIsCliHovering] = useState(false)
   const [isFeature3Hovering, setIsFeature3Hovering] = useState(false)
   const [isFeature4Hovering, setIsFeature4Hovering] = useState(false)
   const [inputValue, setInputValue] = useState("")
 
-  const [baseColor, setBaseColor] = useState<[number, number, number]>([0.545, 0.361, 0.965]) // #8B5CF6 in RGB normalized
-  const [glowColor, setGlowColor] = useState<[number, number, number]>([0.545, 0.361, 0.965]) // #8B5CF6 in RGB normalized
-
-  const [dark, setDark] = useState<number>(theme === "dark" ? 1 : 0)
-
-  useEffect(() => {
-    setBaseColor([0.545, 0.361, 0.965]) // #8B5CF6
-    setGlowColor([0.545, 0.361, 0.965]) // #8B5CF6
-    setDark(theme === "dark" ? 1 : 0)
-  }, [theme])
+  const baseColor: [number, number, number] = [0.376, 0.749, 0.643]
+  const glowColor: [number, number, number] = [0.757, 0.949, 0.467]
+  const markerColor: [number, number, number] = [0.11, 0.259, 0.349]
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter") {
@@ -40,8 +31,8 @@ export default function Features() {
     }
   }
 
-  const scrollToPricing = () => {
-    const element = document.getElementById("pricing")
+  const scrollToPromo = () => {
+    const element = document.getElementById("cta-section")
     if (element) {
       const headerOffset = 120
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
@@ -55,8 +46,8 @@ export default function Features() {
 
   return (
     <section id="features" className="text-foreground relative overflow-hidden py-12 sm:py-24 md:py-32">
-      <div className="bg-[#8B5CF6] absolute -top-10 left-1/2 h-16 w-44 -translate-x-1/2 rounded-full opacity-40 blur-3xl select-none"></div>
-      <div className="via-[#8B5CF6]/50 absolute top-0 left-1/2 h-px w-3/5 -translate-x-1/2 bg-gradient-to-r from-transparent to-transparent transition-all ease-in-out"></div>
+      <div className="bg-[#60BFA4] absolute -top-10 left-1/2 h-16 w-44 -translate-x-1/2 rounded-full opacity-35 blur-3xl select-none"></div>
+      <div className="via-[#60BFA4]/50 absolute top-0 left-1/2 h-px w-3/5 -translate-x-1/2 bg-gradient-to-r from-transparent to-transparent transition-all ease-in-out"></div>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -67,26 +58,25 @@ export default function Features() {
         <div className="flex justify-center mb-2">
           <button
             type="button"
-            className="group relative z-[60] mx-auto rounded-full border border-white/20 bg-white/5 px-6 py-1 text-xs backdrop-blur transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 md:text-sm"
+            className="group relative z-[60] mx-auto rounded-full border border-[#60BFA4]/30 bg-white px-6 py-1 text-xs text-[#0D261F] shadow-[0_10px_30px_rgba(28,66,89,0.08)] backdrop-blur transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 md:text-sm"
           >
-            <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
-            <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
-            <span className="relative text-white">O Sistema EtzAI</span>
+            <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
+            <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
+            <span className="relative text-[#0D261F]">O Sistema Etz.org</span>
           </button>
         </div>
         <h2
           className={cn(
-            "via-foreground mb-8 bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-center text-3xl sm:text-4xl md:text-[54px] md:leading-[60px] font-semibold tracking-tighter text-transparent max-w-4xl",
+            "via-foreground mb-8 bg-gradient-to-r from-[#0D261F] via-[#1C4259] to-[#60BFA4] bg-clip-text text-center text-3xl sm:text-4xl md:text-[54px] md:leading-[60px] font-semibold tracking-tighter text-transparent max-w-4xl",
             geist.className,
           )}
         >
-          A EtzAI cria sistemas inteligentes que trabalham pelo seu negocio.
+          A Etz.org cria sistemas inteligentes que trabalham pelo seu negocio.
         </h2>
         <FollowerPointerCard
           title={
             <div className="flex items-center gap-2">
-              <span>✨</span>
-              <span>Interactive Features</span>
+              <span>💻</span>
             </div>
           }
         >
@@ -103,8 +93,8 @@ export default function Features() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 whileHover={{
                   scale: 1.02,
-                  borderColor: "rgba(139, 92, 246, 0.6)",
-                  boxShadow: "0 0 30px rgba(139, 92, 246, 0.2)",
+                  borderColor: "rgba(96, 191, 164, 0.55)",
+                  boxShadow: "0 24px 60px rgba(28, 66, 89, 0.12)",
                 }}
                 style={{ transition: "all 0s ease-in-out" }}
               >
@@ -168,9 +158,9 @@ export default function Features() {
                       </svg>
                     </motion.div>
 
-                    {/* Animated Purple Blur Effect */}
+                    {/* Animated glow effect */}
                     <motion.div
-                      className="absolute top-1/2 left-1/2 w-16 h-16 bg-purple-500 rounded-full blur-[74px] opacity-65 transform -translate-x-1/2 -translate-y-1/2"
+                      className="absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7FF20C] opacity-40 blur-[74px]"
                       initial={{ scale: 1 }}
                       animate={isCliHovering ? { scale: [1, 1.342, 1, 1.342] } : { scale: 1 }}
                       transition={{
@@ -186,10 +176,10 @@ export default function Features() {
                       <div className="flex items-center gap-8">
                         {/* Left Column */}
                         <div className="flex flex-col gap-3">
-                          {["Feature-1", "Feature-1", "Feature-1"].map((item, index) => (
+                          {["Atendimento", "Vendas", "Suporte"].map((item, index) => (
                             <motion.div
                               key={`left-${index}`}
-                              className="bg-white rounded px-3 py-2 flex items-center gap-2 text-black text-sm font-medium shadow-sm"
+                              className="flex items-center gap-2 rounded bg-white px-3 py-2 text-sm font-medium text-[#0D261F] shadow-sm"
                               initial={{ opacity: 1, x: 0 }}
                               animate={isCliHovering ? { x: [-20, 0] } : { x: 0 }}
                               transition={{
@@ -225,10 +215,10 @@ export default function Features() {
 
                         {/* Right Column */}
                         <div className="flex flex-col gap-3">
-                          {["Feature-1", "Feature-1", "Feature-1"].map((item, index) => (
+                          {["CRM", "Financeiro", "Agenda"].map((item, index) => (
                             <motion.div
                               key={`right-${index}`}
-                              className="bg-white rounded px-3 py-2 flex items-center gap-2 text-black text-sm font-medium shadow-sm"
+                              className="flex items-center gap-2 rounded bg-white px-3 py-2 text-sm font-medium text-[#0D261F] shadow-sm"
                               initial={{ opacity: 1, x: 0 }}
                               animate={isCliHovering ? { x: [20, 0] } : { x: 0 }}
                               transition={{
@@ -291,16 +281,16 @@ export default function Features() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 whileHover={{
                   scale: 1.02,
-                  borderColor: "rgba(139, 92, 246, 0.6)",
-                  boxShadow: "0 0 30px rgba(139, 92, 246, 0.2)",
+                  borderColor: "rgba(96, 191, 164, 0.55)",
+                  boxShadow: "0 24px 60px rgba(28, 66, 89, 0.12)",
                 }}
                 style={{ transition: "all 0s ease-in-out" }}
               >
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl leading-none font-semibold tracking-tight">Automacoes de processos</h3>
+                  <h3 className="text-2xl leading-none font-semibold tracking-tight">Automações de processos</h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
                     <p className="max-w-[460px]">
-                      Menos tarefas manuais, mais eficiencia
+                      Menos tarefas manuais, mais eficiência
                     </p>
                   </div>
                 </div>
@@ -308,11 +298,11 @@ export default function Features() {
                   <h1 className="mt-8 text-center text-5xl leading-[100%] font-semibold sm:leading-normal lg:mt-12 lg:text-6xl">
                     <span className='bg-background relative mt-3 inline-block w-fit rounded-md border px-1.5 py-0.5 before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-full before:bg-[url("/noise.gif")] before:opacity-[0.09] before:content-[""]'>
                       <ScrambleHover
-                        text="feature-2"
+                        text="Fluxo ativo"
                         scrambleSpeed={70}
                         maxIterations={20}
                         useOriginalCharsOnly={false}
-                        className="cursor-pointer bg-gradient-to-t from-[#e78a53] to-[#e78a53] bg-clip-text text-transparent"
+                        className="cursor-pointer bg-gradient-to-t from-[#1C4259] to-[#60BFA4] bg-clip-text text-transparent"
                         isHovering={isHovering}
                         setIsHovering={setIsHovering}
                         characters="abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;':\,./<>?"
@@ -326,13 +316,13 @@ export default function Features() {
                           <div className="bg-secondary/20 h-[400px] w-[400px] animate-pulse rounded-full"></div>
                         }
                       >
-                        <Earth baseColor={baseColor} markerColor={[0, 0, 0]} glowColor={glowColor} dark={dark} />
+                        <Earth baseColor={baseColor} markerColor={markerColor} glowColor={glowColor} dark={0} />
                       </Suspense>
                     </div>
                   </div>
                   <div className="absolute top-1/2 w-full translate-y-20 scale-x-[1.2] opacity-70 transition-all duration-1000 group-hover:translate-y-8 group-hover:opacity-100">
-                    <div className="from-primary/50 to-primary/0 absolute left-1/2 h-[256px] w-[60%] -translate-x-1/2 scale-[2.5] rounded-[50%] bg-radial from-10% to-60% opacity-20 sm:h-[512px] dark:opacity-100"></div>
-                    <div className="from-primary/30 to-primary/0 absolute left-1/2 h-[128px] w-[40%] -translate-x-1/2 scale-200 rounded-[50%] bg-radial from-10% to-60% opacity-20 sm:h-[256px] dark:opacity-100"></div>
+                    <div className="from-primary/50 to-primary/0 absolute left-1/2 h-[256px] w-[60%] -translate-x-1/2 scale-[2.5] rounded-[50%] bg-radial from-10% to-60% opacity-20 sm:h-[512px]"></div>
+                    <div className="from-primary/30 to-primary/0 absolute left-1/2 h-[128px] w-[40%] -translate-x-1/2 scale-200 rounded-[50%] bg-radial from-10% to-60% opacity-20 sm:h-[256px]"></div>
                   </div>
                 </div>
               </motion.div>
@@ -347,8 +337,8 @@ export default function Features() {
                 transition={{ duration: 0.5, delay: 1.0 }}
                 whileHover={{
                   scale: 1.02,
-                  borderColor: "rgba(139, 92, 246, 0.5)",
-                  boxShadow: "0 0 30px rgba(139, 92, 246, 0.2)",
+                  borderColor: "rgba(96, 191, 164, 0.55)",
+                  boxShadow: "0 24px 60px rgba(28, 66, 89, 0.12)",
                 }}
                 style={{ transition: "all 0s ease-in-out" }}
               >
@@ -362,11 +352,11 @@ export default function Features() {
                 </div>
                 <div className="flex grow items-center justify-center select-none relative min-h-[300px] p-4">
                   <div className="w-full max-w-lg">
-                    <div className="relative rounded-2xl border border-white/10 bg-black/20 dark:bg-white/5 backdrop-blur-sm">
+                    <div className="relative rounded-2xl border border-[#1C4259]/10 bg-white/90 shadow-[0_12px_32px_rgba(28,66,89,0.08)] backdrop-blur-sm">
                       <div className="p-4">
                         <textarea
-                          className="w-full min-h-[100px] bg-transparent border-none text-white placeholder:text-white/50 resize-none focus:outline-none text-base leading-relaxed"
-                          placeholder="Search the web..."
+                          className="min-h-[100px] w-full resize-none border-none bg-transparent text-base leading-relaxed text-[#0D261F] placeholder:text-[#4D6B63] focus:outline-none"
+                          placeholder="Descreva a automacao ou o painel que voce precisa..."
                           value={inputValue}
                           onChange={(e) => setInputValue(e.target.value)}
                           onKeyDown={handleKeyDown}
@@ -374,7 +364,7 @@ export default function Features() {
                       </div>
                       <div className="flex items-center justify-between px-4 pb-4">
                         <div className="flex items-center gap-3">
-                          <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                          <button className="rounded-full bg-[#EEF8F5] p-2 transition-colors hover:bg-[#DDF4EC]">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
@@ -385,12 +375,12 @@ export default function Features() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="text-white/70"
+                              className="text-[#4D6B63]"
                             >
                               <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
                             </svg>
                           </button>
-                          <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 transition-colors text-white font-medium">
+                          <button className="flex items-center gap-2 rounded-full bg-[#7FF20C] px-4 py-2 font-medium text-[#0D261F] transition-colors hover:bg-[#C1F277]">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
@@ -406,10 +396,10 @@ export default function Features() {
                               <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                               <path d="M2 12h20"></path>
                             </svg>
-                            Search
+                            Executar
                           </button>
                         </div>
-                        <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                        <button className="rounded-full bg-[#EEF8F5] p-2 transition-colors hover:bg-[#DDF4EC]">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -420,7 +410,7 @@ export default function Features() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="text-white/70"
+                            className="text-[#4D6B63]"
                           >
                             <path d="m22 2-7 20-4-9-9-4Z"></path>
                             <path d="M22 2 11 13"></path>
@@ -443,8 +433,8 @@ export default function Features() {
                 whileHover={{
                   rotateY: 5,
                   rotateX: 2,
-                  boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)",
-                  borderColor: "rgba(139, 92, 246, 0.6)",
+                  boxShadow: "0 24px 60px rgba(28, 66, 89, 0.14)",
+                  borderColor: "rgba(96, 191, 164, 0.55)",
                 }}
                 style={{ transition: "all 0s ease-in-out" }}
               >
@@ -463,7 +453,7 @@ export default function Features() {
                       alt="Dynamic Layout Example"
                       className="w-full h-auto rounded-lg shadow-lg"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-[#1C4259]/10 to-transparent"></div>
                   </div>
                 </div>
               </motion.div>
@@ -477,12 +467,12 @@ export default function Features() {
           transition={{ duration: 0.5, delay: 1.2 }}
           className="mt-12 text-center"
         >
-          <p className="text-xl md:text-2xl text-white/70 mb-8 font-medium">
+          <p className="mb-8 text-xl font-medium text-[#1C4259] md:text-2xl">
             Voce nao precisa entender de IA. Nos cuidamos de tudo.
           </p>
           <Button
-            onClick={scrollToPricing}
-            className="bg-gradient-to-b from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] hover:opacity-90 transition-opacity px-8 py-6 text-lg"
+            onClick={scrollToPromo}
+            className="bg-[#7FF20C] px-8 py-6 text-lg text-[#0D261F] shadow-[0_14px_30px_rgba(127,242,12,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#C1F277]"
           >
             Quero esse sistema
           </Button>

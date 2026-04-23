@@ -24,10 +24,10 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4">
       <Link
         href="/"
-        className="absolute top-6 left-6 z-20 text-zinc-400 hover:text-[#e78a53] transition-colors duration-200 flex items-center space-x-2"
+        className="absolute top-6 left-6 z-20 flex items-center space-x-2 text-[#4D6B63] transition-colors duration-200 hover:text-[#1C4259]"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -36,11 +36,11 @@ export default function LoginPage() {
       </Link>
 
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-black to-zinc-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f7fbf9] to-[#eef8f5]" />
 
       {/* Decorative elements */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-[#e78a53]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#e78a53]/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-[#60BFA4]/14 blur-3xl" />
+      <div className="absolute bottom-20 right-20 h-96 w-96 rounded-full bg-[#C1F277]/16 blur-3xl" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -57,15 +57,15 @@ export default function LoginPage() {
                 viewBox="0 0 147 70"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
-                className="text-[#e78a53] rounded-full size-8 w-8"
+                className="rounded-full size-8 w-8 text-[#1C4259]"
               >
                 <path d="M56 50.2031V14H70V60.1562C70 65.5928 65.5928 70 60.1562 70C57.5605 70 54.9982 68.9992 53.1562 67.1573L0 14H19.7969L56 50.2031Z"></path>
                 <path d="M147 56H133V23.9531L100.953 56H133V70H96.6875C85.8144 70 77 61.1856 77 50.3125V14H91V46.1562L123.156 14H91V0H127.312C138.186 0 147 8.81439 147 19.6875V56Z"></path>
               </svg>
             </div>
           </Link>
-          <h1 className="text-3xl font-bold text-white mb-2">Welcome back</h1>
-          <p className="text-zinc-400">Sign in to your account to continue</p>
+          <h1 className="mb-2 text-3xl font-bold text-[#0D261F]">Welcome back</h1>
+          <p className="text-[#4D6B63]">Sign in to your account to continue</p>
         </div>
 
         {/* Login Form */}
@@ -73,11 +73,11 @@ export default function LoginPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="bg-zinc-900/50 backdrop-blur-xl border border-zinc-800 rounded-2xl p-8"
+          className="rounded-2xl border border-[#1C4259]/10 bg-white/90 p-8 shadow-[0_18px_50px_rgba(28,66,89,0.08)] backdrop-blur-xl"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-white">
+              <Label htmlFor="email" className="text-[#0D261F]">
                 Email
               </Label>
               <Input
@@ -86,13 +86,13 @@ export default function LoginPage() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-[#e78a53] focus:ring-[#e78a53]/20"
+                className="border-[#D4E6DF] bg-white text-[#0D261F] placeholder:text-[#6E8780] focus:border-[#60BFA4] focus:ring-[#60BFA4]/20"
                 required
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-white">
+              <Label htmlFor="password" className="text-[#0D261F]">
                 Password
               </Label>
               <Input
@@ -101,7 +101,7 @@ export default function LoginPage() {
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-[#e78a53] focus:ring-[#e78a53]/20"
+                className="border-[#D4E6DF] bg-white text-[#0D261F] placeholder:text-[#6E8780] focus:border-[#60BFA4] focus:ring-[#60BFA4]/20"
                 required
               />
             </div>
@@ -110,11 +110,11 @@ export default function LoginPage() {
               <label className="flex items-center space-x-2 text-sm">
                 <input
                   type="checkbox"
-                  className="rounded border-zinc-700 bg-zinc-800 text-[#e78a53] focus:ring-[#e78a53]/20"
+                  className="rounded border-[#D4E6DF] bg-white text-[#1C4259] focus:ring-[#60BFA4]/20"
                 />
-                <span className="text-zinc-300">Remember me</span>
+                <span className="text-[#4D6B63]">Remember me</span>
               </label>
-              <Link href="#" className="text-sm text-[#e78a53] hover:text-[#e78a53]/80">
+              <Link href="#" className="text-sm text-[#1C4259] hover:text-[#60BFA4]">
                 Forgot password?
               </Link>
             </div>
@@ -122,16 +122,16 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#e78a53] hover:bg-[#e78a53]/90 text-white font-medium py-3 rounded-xl transition-colors"
+              className="w-full rounded-xl bg-[#7FF20C] py-3 font-medium text-[#0D261F] transition-colors hover:bg-[#C1F277]"
             >
               {isLoading ? "Signing in..." : "Sign in"}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-zinc-400">
+            <p className="text-[#4D6B63]">
               Don't have an account?{" "}
-              <Link href="/signup" className="text-[#e78a53] hover:text-[#e78a53]/80 font-medium">
+              <Link href="/signup" className="font-medium text-[#1C4259] hover:text-[#60BFA4]">
                 Sign up
               </Link>
             </p>
@@ -147,20 +147,20 @@ export default function LoginPage() {
         >
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-zinc-800" />
+              <div className="w-full border-t border-[#D4E6DF]" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-black text-zinc-500">Or continue with</span>
+              <span className="bg-white px-2 text-[#6E8780]">Or continue with</span>
             </div>
           </div>
 
           <div className="mt-6 grid grid-cols-2 gap-3">
             <Button
               variant="outline"
-              className="bg-zinc-900/50 border-zinc-800 text-zinc-300 hover:bg-white hover:text-black hover:border-white transition-all duration-200 group"
+              className="group border-[#D4E6DF] bg-white text-[#1C4259] transition-all duration-200 hover:border-[#60BFA4] hover:bg-[#EEF8F5] hover:text-[#0D261F]"
             >
               <svg
-                className="w-5 h-5 mr-2 text-zinc-300 group-hover:text-black transition-colors duration-200"
+                className="mr-2 h-5 w-5 text-[#1C4259] transition-colors duration-200 group-hover:text-[#0D261F]"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -184,10 +184,10 @@ export default function LoginPage() {
             </Button>
             <Button
               variant="outline"
-              className="bg-zinc-900/50 border-zinc-800 text-zinc-300 hover:bg-white hover:text-black hover:border-white transition-all duration-200 group"
+              className="group border-[#D4E6DF] bg-white text-[#1C4259] transition-all duration-200 hover:border-[#60BFA4] hover:bg-[#EEF8F5] hover:text-[#0D261F]"
             >
               <svg
-                className="w-5 h-5 mr-2 text-zinc-300 group-hover:text-black transition-colors duration-200"
+                className="mr-2 h-5 w-5 text-[#1C4259] transition-colors duration-200 group-hover:text-[#0D261F]"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >

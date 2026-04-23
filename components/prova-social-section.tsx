@@ -57,8 +57,8 @@ export function ProvaSocialSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
-  const scrollToPricing = () => {
-    const element = document.getElementById("pricing")
+  const scrollToPromo = () => {
+    const element = document.getElementById("cta-section")
     if (element) {
       const headerOffset = 120
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
@@ -88,26 +88,26 @@ export function ProvaSocialSection() {
           >
             <button
               type="button"
-              className="group relative z-[60] mx-auto rounded-full border border-white/20 bg-white/5 px-6 py-1 text-xs backdrop-blur transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 md:text-sm"
+              className="group relative z-[60] mx-auto rounded-full border border-[#60BFA4]/30 bg-white px-6 py-1 text-xs text-[#0D261F] shadow-[0_10px_30px_rgba(28,66,89,0.08)] backdrop-blur transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 md:text-sm"
             >
-              <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
-              <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
-              <span className="relative text-white">Prova Social</span>
+              <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
+              <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
+              <span className="relative text-[#0D261F]">Prova Social</span>
             </button>
           </motion.div>
 
           <h2
             className={cn(
               "text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter text-balance mb-4",
-              "bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent",
+              "bg-gradient-to-r from-[#0D261F] via-[#1C4259] to-[#60BFA4] bg-clip-text text-transparent",
               geist.className
             )}
           >
             Empresas que ja transformaram seus resultados
           </h2>
 
-          <p className="text-lg text-white/60 mb-10 max-w-2xl mx-auto">
-            Junte-se a dezenas de empresas que ja estao escalando seus negocios com a EtzAI
+          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Junte-se a dezenas de empresas que ja estao escalando seus negocios com a Etz.org
           </p>
 
           <motion.div
@@ -125,14 +125,14 @@ export function ProvaSocialSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex flex-col items-center gap-4"
           >
-            <div className="flex items-center gap-2 text-[#8B5CF6]">
+            <div className="flex items-center gap-2 text-[#1C4259]">
               <span className="text-3xl font-bold">+50</span>
-              <span className="text-white/60">empresas atendidas</span>
+              <span className="text-muted-foreground">empresas atendidas</span>
             </div>
             
             <Button
-              onClick={scrollToPricing}
-              className="bg-gradient-to-b from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] hover:opacity-90 transition-opacity px-8 py-6 text-lg mt-4"
+              onClick={scrollToPromo}
+              className="mt-4 bg-[#7FF20C] px-8 py-6 text-lg text-[#0D261F] shadow-[0_14px_30px_rgba(127,242,12,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#C1F277]"
             >
               Quero esses resultados
             </Button>

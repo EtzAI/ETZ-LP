@@ -1,24 +1,17 @@
 "use client"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import Hero from "@/components/home/hero"
 import { ProblemaSection } from "@/components/problema-section"
 import Features from "@/components/features"
 import { ProvaSocialSection } from "@/components/prova-social-section"
 import { NewReleasePromo } from "@/components/new-release-promo"
 import { FAQSection } from "@/components/faq-section"
-import { PricingSection } from "@/components/pricing-section"
 import { StickyFooter } from "@/components/sticky-footer"
-import TestimonialsSection from "@/components/testimonials-section" // Import TestimonialsSection
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const root = window.document.documentElement
-    root.classList.remove("light", "system")
-    root.classList.add("dark")
-  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,30 +22,34 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId)
+    if (!element) return
+
+    const headerOffset = 120
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+    const offsetPosition = elementPosition - headerOffset
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })
+  }
+
   const handleMobileNavClick = (elementId: string) => {
     setIsMobileMenuOpen(false)
     setTimeout(() => {
-      const element = document.getElementById(elementId)
-      if (element) {
-        const headerOffset = 120 // Account for sticky header height + margin
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-        const offsetPosition = elementPosition - headerOffset
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        })
-      }
+      scrollToSection(elementId)
     }, 100)
   }
 
   return (
-    <div className="min-h-screen w-full relative bg-black">
-      {/* Pearl Mist Background with Top Glow */}
+    <div className="min-h-screen w-full relative bg-white">
       <div
         className="absolute inset-0 z-0"
         style={{
-          background: "radial-gradient(ellipse 50% 35% at 50% 0%, rgba(226, 232, 240, 0.12), transparent 60%), #000000",
+          background:
+            "radial-gradient(ellipse 55% 34% at 50% 0%, rgba(96, 191, 164, 0.2), transparent 60%), radial-gradient(circle at 85% 16%, rgba(193, 242, 119, 0.2), transparent 16%), linear-gradient(180deg, #ffffff 0%, #f8fcfa 45%, #ffffff 100%)",
         }}
       />
 
@@ -74,86 +71,25 @@ export default function Home() {
           }`}
           href="/"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] flex items-center justify-center shadow-md shadow-[#8B5CF6]/20">
-            <span className="text-xs font-bold text-white">Etz</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#7FF20C] via-[#C1F277] to-[#60BFA4] shadow-md shadow-[#60BFA4]/25">
+            <span className="text-xs font-bold text-[#0D261F]">Etz</span>
           </div>
-          <span className="font-bold text-foreground">EtzAI</span>
+          <span className="font-bold text-foreground">Etz.org</span>
         </a>
 
-        <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-muted-foreground transition duration-200 hover:text-foreground md:flex md:space-x-2">
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("features")
-              if (element) {
-                const headerOffset = 120 // Account for sticky header height + margin
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            <span className="relative z-20">Sistema</span>
-          </a>
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("pricing")
-              if (element) {
-                const headerOffset = 120 // Account for sticky header height + margin
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            <span className="relative z-20">Planos</span>
-          </a>
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("faq")
-              if (element) {
-                const headerOffset = 120 // Account for sticky header height + margin
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            <span className="relative z-20">FAQ</span>
-          </a>
+        <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium md:flex md:space-x-3">
+          <button type="button" className="header-chip cursor-pointer" onClick={() => scrollToSection("features")}>
+            <span>Sistema</span>
+          </button>
+          <button type="button" className="header-chip cursor-pointer" onClick={() => scrollToSection("faq")}>
+            <span>FAQ</span>
+          </button>
         </div>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="/login"
-            className="font-medium transition-colors hover:text-foreground text-muted-foreground text-sm cursor-pointer"
-          >
-            Log In
-          </a>
-
-          <a
-            href="/signup"
-            className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm"
-          >
-            Comecar
-          </a>
+        <div className="flex items-center gap-2">
+          <Link href="/comecar" className="header-chip header-chip-primary cursor-pointer px-5 font-bold">
+            <span>Começar</span>
+          </Link>
         </div>
       </header>
 
@@ -163,10 +99,10 @@ export default function Home() {
           className="flex items-center justify-center gap-2"
           href="/"
         >
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] flex items-center justify-center shadow-md shadow-[#8B5CF6]/20">
-            <span className="text-[10px] font-bold text-white">Etz</span>
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-[#7FF20C] via-[#C1F277] to-[#60BFA4] shadow-md shadow-[#60BFA4]/25">
+            <span className="text-[10px] font-bold text-[#0D261F]">Etz</span>
           </div>
-          <span className="font-bold text-foreground text-sm">EtzAI</span>
+          <span className="font-bold text-foreground text-sm">Etz.org</span>
         </a>
 
         <button
@@ -190,40 +126,28 @@ export default function Home() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[9998] bg-black/50 backdrop-blur-sm md:hidden">
+        <div className="fixed inset-0 z-[9998] bg-[#1C4259]/12 backdrop-blur-sm md:hidden">
           <div className="absolute top-20 left-4 right-4 bg-background/95 backdrop-blur-md border border-border/50 rounded-2xl shadow-2xl p-6">
             <nav className="flex flex-col space-y-4">
               <button
                 onClick={() => handleMobileNavClick("features")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
+                className="header-chip w-full justify-start px-4 py-3 text-left text-lg font-medium"
               >
-                Sistema
-              </button>
-              <button
-                onClick={() => handleMobileNavClick("pricing")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
-              >
-                Planos
+                <span>Sistema</span>
               </button>
               <button
                 onClick={() => handleMobileNavClick("faq")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
+                className="header-chip w-full justify-start px-4 py-3 text-left text-lg font-medium"
               >
-                FAQ
+                <span>FAQ</span>
               </button>
-              <div className="border-t border-border/50 pt-4 mt-4 flex flex-col space-y-3">
-                <a
-                  href="/login"
-                  className="px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50 cursor-pointer"
+              <div className="mt-4 flex flex-col space-y-3 border-t border-border/50 pt-4">
+                <Link
+                  href="/comecar"
+                  className="header-chip header-chip-primary w-full justify-center px-4 py-3 text-lg font-bold"
                 >
-                  Log In
-                </a>
-                <a
-                  href="/signup"
-                  className="px-4 py-3 text-lg font-bold text-center bg-gradient-to-b from-[#8B5CF6] to-[#7C3AED] text-white rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  Comecar
-                </a>
+                  <span>Começar</span>
+                </Link>
               </div>
             </nav>
           </div>
@@ -246,11 +170,6 @@ export default function Home() {
       {/* Prova Social Section */}
       <div id="prova-social">
         <ProvaSocialSection />
-      </div>
-
-      {/* Pricing Section */}
-      <div id="pricing">
-        <PricingSection />
       </div>
 
       <NewReleasePromo />

@@ -33,7 +33,7 @@ export function StickyFooter() {
       {isAtBottom && (
         <motion.div
           className="fixed z-50 bottom-0 left-0 w-full h-80 flex justify-center items-center"
-          style={{ backgroundColor: "#8B5CF6" }}
+          style={{ backgroundColor: "#C1F277" }}
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
           exit={{ y: "100%" }}
@@ -53,24 +53,24 @@ export function StickyFooter() {
                 <li
                   className="hover:underline cursor-pointer transition-colors"
                   style={{ color: "#121113" }}
-                  onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
-                  onMouseLeave={(e) => (e.target.style.color = "#121113")}
+                  onMouseEnter={(e) => ((e.target as HTMLLIElement).style.color = "rgba(18, 17, 19, 0.8)")}
+                  onMouseLeave={(e) => ((e.target as HTMLLIElement).style.color = "#121113")}
                 >
                   Home
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
                   style={{ color: "#121113" }}
-                  onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
-                  onMouseLeave={(e) => (e.target.style.color = "#121113")}
+                  onMouseEnter={(e) => ((e.target as HTMLLIElement).style.color = "rgba(18, 17, 19, 0.8)")}
+                  onMouseLeave={(e) => ((e.target as HTMLLIElement).style.color = "#121113")}
                 >
                   Docs
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
                   style={{ color: "#121113" }}
-                  onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
-                  onMouseLeave={(e) => (e.target.style.color = "#121113")}
+                  onMouseEnter={(e) => ((e.target as HTMLLIElement).style.color = "rgba(18, 17, 19, 0.8)")}
+                  onMouseLeave={(e) => ((e.target as HTMLLIElement).style.color = "#121113")}
                 >
                   Components
                 </li>
@@ -79,37 +79,37 @@ export function StickyFooter() {
                 <li
                   className="hover:underline cursor-pointer transition-colors"
                   style={{ color: "#121113" }}
-                  onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
-                  onMouseLeave={(e) => (e.target.style.color = "#121113")}
+                  onMouseEnter={(e) => ((e.target as HTMLLIElement).style.color = "rgba(18, 17, 19, 0.8)")}
+                  onMouseLeave={(e) => ((e.target as HTMLLIElement).style.color = "#121113")}
                 >
                   Github
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
                   style={{ color: "#121113" }}
-                  onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
-                  onMouseLeave={(e) => (e.target.style.color = "#121113")}
+                  onMouseEnter={(e) => ((e.target as HTMLLIElement).style.color = "rgba(18, 17, 19, 0.8)")}
+                  onMouseLeave={(e) => ((e.target as HTMLLIElement).style.color = "#121113")}
                 >
                   Twitter
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
                   style={{ color: "#121113" }}
-                  onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
-                  onMouseLeave={(e) => (e.target.style.color = "#121113")}
+                  onMouseEnter={(e) => ((e.target as HTMLLIElement).style.color = "rgba(18, 17, 19, 0.8)")}
+                  onMouseLeave={(e) => ((e.target as HTMLLIElement).style.color = "#121113")}
                 >
                   Discord
                 </li>
               </ul>
             </motion.div>
             <motion.h2
-              className="absolute bottom-0 left-0 translate-y-1/3 sm:text-[192px] text-[80px] font-bold select-none"
-              style={{ color: "#121113" }}
+              className="absolute bottom-20 left-0 translate-y-1/3 sm:text-[192px] text-[80px] font-bold select-none"
+              style={{ color: "#1C4259" }}
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              EtzAI
+              Etz.org
             </motion.h2>
           </div>
         </motion.div>
