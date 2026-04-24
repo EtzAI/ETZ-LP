@@ -1,15 +1,14 @@
 "use client"
 
-import { PixelCard } from "../ui/pixelcards"
+import { PixelCard } from "./ui/pixelcards"
 import { geist } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
-import { CloudLightning, MoveRight } from "lucide-react"
+import { ArrowRightIcon, LightningBoltIcon, MagicWandIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button"
-import HomeBadge from "../ui/home-badge"
-import { Beam } from "../ui/gridbeam"
-import { Sparkles } from "lucide-react"
+import HomeBadge from "./ui/home-badge"
+import { Beam } from "./ui/gridbeam"
 import { useEffect, useState } from "react"
-import { CardHoverEffect } from "../ui/pulse-card"
+import { CardHoverEffect } from "./ui/pulse-card"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
@@ -53,14 +52,14 @@ export default function Hero() {
     {
       title: "V0 Compatible",
       description: "Edit and customize visually, instantly.",
-      icon: <CloudLightning className="h-full w-full" />,
+      icon: <LightningBoltIcon className="h-full w-full" />,
       variant: "rose",
       showGridLines: true,
     },
     {
       title: "Animated Out of Box",
       description: "No setup and  smooth UI interactions.",
-      icon: <Sparkles className="h-full w-full" />,
+      icon: <MagicWandIcon className="h-full w-full" />,
       variant: "rose",
       showGridLines: true,
     },
@@ -173,7 +172,7 @@ export default function Hero() {
           </Link>
           <Link prefetch={false} href="/about">
             <Button variant={"secondary"}>
-              About <MoveRight className="ml-2 h-4 w-4" />
+              About <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </motion.div>

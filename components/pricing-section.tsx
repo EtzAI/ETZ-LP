@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check, Sparkles } from "lucide-react"
+import { CheckIcon, MagicWandIcon } from "@radix-ui/react-icons"
 import { useState } from "react"
 
 const pricingPlans = [
@@ -68,7 +68,7 @@ export function PricingSection() {
             transition={{ duration: 0.5 }}
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#60BFA4]/30 bg-white px-4 py-2 shadow-[0_10px_30px_rgba(28,66,89,0.08)] backdrop-blur-sm"
           >
-            <Sparkles className="h-4 w-4 text-[#60BFA4]" />
+            <MagicWandIcon className="h-4 w-4 text-[#60BFA4]" />
             <span className="text-sm font-medium text-[#1C4259]">Pricing</span>
           </motion.div>
 
@@ -154,7 +154,7 @@ export function PricingSection() {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 flex-shrink-0 text-[#60BFA4]" />
+                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-[#60BFA4]" />
                     <span className="text-sm text-[#1C4259]">{feature}</span>
                   </li>
                 ))}

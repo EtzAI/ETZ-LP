@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, ChevronRight, MessageCircleMore, PhoneCall, SendHorizontal } from "lucide-react"
+import { ArrowLeftIcon, ChatBubbleIcon, ChevronRightIcon, MobileIcon, PaperPlaneIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -47,7 +47,7 @@ export default function ComecarPage() {
             href="/"
             className="inline-flex items-center gap-2 rounded-full border border-[#1C4259]/10 bg-white px-4 py-2 text-sm font-medium text-[#1C4259] shadow-[0_10px_30px_rgba(28,66,89,0.08)] transition-all hover:-translate-y-0.5 hover:border-[#60BFA4]/30 hover:text-[#0D261F]"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeftIcon className="h-4 w-4" />
             Voltar para a landing
           </Link>
 
@@ -181,7 +181,7 @@ export default function ComecarPage() {
                       className="h-11 rounded-full bg-[#7FF20C] px-6 text-base font-semibold text-[#0D261F] shadow-[0_14px_30px_rgba(127,242,12,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#C1F277]"
                     >
                       Enviar interesse
-                      <SendHorizontal className="h-4 w-4" />
+                      <PaperPlaneIcon className="h-4 w-4" />
                     </Button>
                   </div>
                 </form>
@@ -230,20 +230,20 @@ export default function ComecarPage() {
                   >
                     <span className="flex items-center gap-3">
                       <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#7FF20C] text-[#0D261F]">
-                        <MessageCircleMore className="h-5 w-5" />
+                        <ChatBubbleIcon className="h-5 w-5" />
                       </span>
                       <span>
                         <span className="block text-sm text-white/70">Contato imediato</span>
                         <span className="block text-base font-semibold">Abrir conversa no telefone</span>
                       </span>
                     </span>
-                    <ChevronRight className="h-5 w-5" />
+                    <ChevronRightIcon className="h-5 w-5" />
                   </a>
                 ) : (
                   <div className="mt-8 rounded-3xl border border-dashed border-white/25 bg-white/10 p-5 text-sm leading-6 text-white/80">
                     <div className="mb-3 flex items-center gap-3">
                       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/12">
-                        <PhoneCall className="h-4 w-4" />
+                        <MobileIcon className="h-4 w-4" />
                       </span>
                       <span className="font-semibold text-white">Botão de conversa pronto para configuração</span>
                     </div>

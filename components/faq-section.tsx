@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Plus, Minus } from "lucide-react"
+import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function FAQSection() {
@@ -90,9 +90,9 @@ export function FAQSection() {
                   className=""
                 >
                   {openItems.includes(index) ? (
-                    <Minus className="text-primary flex-shrink-0 transition duration-300" size={24} />
+                    <MinusIcon className="text-primary h-6 w-6 flex-shrink-0 transition duration-300" />
                   ) : (
-                    <Plus className="text-primary flex-shrink-0 transition duration-300" size={24} />
+                    <PlusIcon className="text-primary h-6 w-6 flex-shrink-0 transition duration-300" />
                   )}
                 </motion.div>
               </div>

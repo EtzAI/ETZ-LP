@@ -4,28 +4,28 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { cn } from "@/lib/utils"
 import { geist } from "@/lib/fonts"
-import { Clock, UserX, Settings, BarChart3, Users } from "lucide-react"
+import { BarChartIcon, ClockIcon, GearIcon, GroupIcon, PersonIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button"
 
 const problemas = [
   {
-    icon: Clock,
+    icon: ClockIcon,
     text: "Atendimento lento ou inexistente fora do horario",
   },
   {
-    icon: UserX,
+    icon: PersonIcon,
     text: "Leads chegam e ninguem responde",
   },
   {
-    icon: Settings,
+    icon: GearIcon,
     text: "Processos manuais e retrabalho",
   },
   {
-    icon: BarChart3,
+    icon: BarChartIcon,
     text: "Falta de controle e dados",
   },
   {
-    icon: Users,
+    icon: GroupIcon,
     text: "Equipe sobrecarregada",
   },
 ]
@@ -60,21 +60,6 @@ export function ProblemaSection() {
         className="container mx-auto px-4"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex justify-center mb-6"
-          >
-            <button
-              type="button"
-              className="group relative z-[60] mx-auto rounded-full border border-[#60BFA4]/30 bg-white px-6 py-1 text-xs text-[#0D261F] shadow-[0_10px_30px_rgba(28,66,89,0.08)] backdrop-blur transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 md:text-sm"
-            >
-              <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
-              <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
-              <span className="relative text-[#0D261F]">Problema</span>
-            </button>
-          </motion.div>
 
           <h2
             className={cn(

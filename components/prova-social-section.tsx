@@ -86,14 +86,21 @@ export function ProvaSocialSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex justify-center mb-6"
           >
-            <button
-              type="button"
-              className="group relative z-[60] mx-auto rounded-full border border-[#60BFA4]/30 bg-white px-6 py-1 text-xs text-[#0D261F] shadow-[0_10px_30px_rgba(28,66,89,0.08)] backdrop-blur transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 md:text-sm"
-            >
-              <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
-              <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
-              <span className="relative text-[#0D261F]">Prova Social</span>
-            </button>
+          <button
+            type="button"
+            className="group relative z-[60] mx-auto inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#60BFA4]/35 bg-white/75 py-1.5 pr-5 pl-2 text-xs font-semibold tracking-[0.02em] text-[#0D261F] shadow-[0_18px_50px_rgba(28,66,89,0.10)] backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:border-[#7FF20C]/60 hover:bg-white hover:shadow-[0_24px_70px_rgba(96,191,164,0.20)] active:scale-[0.98] md:text-sm"
+          >
+            <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(127,242,12,0.24),transparent_30%),linear-gradient(90deg,rgba(96,191,164,0.10),transparent_55%)] opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#7FF20C] to-transparent opacity-70 transition-all duration-700 group-hover:inset-x-3" />
+            <span className="pointer-events-none absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-[#60BFA4] to-transparent opacity-70 transition-all duration-700 group-hover:inset-x-3" />
+            <span className="relative flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-[#1C4259] via-[#60BFA4] to-[#7FF20C] text-[11px] font-bold text-white shadow-[0_10px_26px_rgba(96,191,164,0.30)] ring-1 ring-white/70">
+              Etz
+            </span>
+            <span className="relative flex items-center gap-2">
+              <span className="size-1.5 rounded-full bg-[#7FF20C] shadow-[0_0_18px_rgba(127,242,12,0.95)] transition-transform duration-500 group-hover:scale-125" />
+              <span className="text-[#0D261F]">Prova Social</span>
+            </span>
+          </button>
           </motion.div>
 
           <h2

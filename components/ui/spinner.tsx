@@ -1,10 +1,13 @@
-import { Loader2Icon } from 'lucide-react'
+import { ReloadIcon } from '@radix-ui/react-icons'
 
 import { cn } from '@/lib/utils'
 
-function Spinner({ className, ...props }: React.ComponentProps<'svg'>) {
+function Spinner({
+  className,
+  ...props
+}: Omit<React.ComponentProps<typeof ReloadIcon>, 'children'>) {
   return (
-    <Loader2Icon
+    <ReloadIcon
       role="status"
       aria-label="Loading"
       className={cn('size-4 animate-spin', className)}

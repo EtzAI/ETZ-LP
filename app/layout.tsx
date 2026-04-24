@@ -5,7 +5,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Etz.org",
-  description: "Solucoes inteligentes em IA, automacoes e software sob medida.",
+  description: "Soluções inteligentes em IA, automações e software sob medida.",
   generator: "Codex",
 }
 
