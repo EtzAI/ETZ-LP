@@ -71,10 +71,9 @@ export default function Home() {
           }`}
           href="/"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#7FF20C] via-[#C1F277] to-[#60BFA4] shadow-md shadow-[#60BFA4]/25">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#7FF20C] via-[#C1F277] to-[#60BFA4] shadow-md shadow-[#60BFA4]/25">
             <span className="text-xs font-bold text-[#0D261F]">Etz</span>
           </div>
-          <span className="font-bold text-foreground">Etz.org</span>
         </a>
 
         <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium md:flex md:space-x-3">

@@ -110,11 +110,11 @@ export function ProvaSocialSection() {
               geist.className
             )}
           >
-            Empresas que ja transformaram seus resultados
+            Empresas que já transformaram seus resultados
           </h2>
 
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Junte-se a dezenas de empresas que ja estao escalando seus negocios com a Etz.org
+            Junte-se a dezenas de empresas que já estão escalando seus negócios com a Etz.org
           </p>
 
           <motion.div
@@ -139,7 +139,8 @@ export function ProvaSocialSection() {
             
             <Button
               onClick={scrollToPromo}
-              className="mt-4 bg-[#7FF20C] px-8 py-6 text-lg text-[#0D261F] shadow-[0_14px_30px_rgba(127,242,12,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#C1F277]"
+              className="h-14 rounded-lg bg-[#FFF] px-8 text-lg font-bold tracking-[0.01em] text-[#1C4259] shadow-[0_16px_36px_rgba(13,38,31,0.22)] ring-1 ring-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:border-[#C1F277] hover:text-[#FFF] hover:bg-[#12382E] hover:shadow-[0_20px_44px_rgba(13,38,31,0.30),0_0_0_4px_rgba(127,242,12,0.10)] active:translate-y-0 active:scale-[0.98]"
+
             >
               Quero esses resultados
             </Button>

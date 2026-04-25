@@ -10,11 +10,11 @@ import { Button } from "@/components/ui/button"
 const problemas = [
   {
     icon: ClockIcon,
-    text: "Atendimento lento ou inexistente fora do horario",
+    text: "Atendimento lento ou inexistente fora do horário",
   },
   {
     icon: PersonIcon,
-    text: "Leads chegam e ninguem responde",
+    text: "Leads chegam e ninguém responde",
   },
   {
     icon: GearIcon,
@@ -68,7 +68,7 @@ export function ProblemaSection() {
               geist.className
             )}
           >
-            Seu negocio esta perdendo tempo, dinheiro e oportunidades todos os dias.
+            Seu negócio está perdendo tempo, dinheiro e oportunidades todos os dias.
           </h2>
 
           <div className="grid gap-4 md:gap-6 max-w-2xl mx-auto">
@@ -96,7 +96,8 @@ export function ProblemaSection() {
           >
             <Button
               onClick={scrollToPromo}
-              className="bg-[#7FF20C] px-8 py-6 text-lg text-[#0D261F] shadow-[0_14px_30px_rgba(127,242,12,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#C1F277]"
+              className="h-14 rounded-lg bg-[#FFF] px-8 text-lg font-bold tracking-[0.01em] text-[#1C4259] shadow-[0_16px_36px_rgba(13,38,31,0.22)] ring-1 ring-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:border-[#C1F277] hover:text-[#FFF] hover:bg-[#12382E] hover:shadow-[0_20px_44px_rgba(13,38,31,0.30),0_0_0_4px_rgba(127,242,12,0.10)] active:translate-y-0 active:scale-[0.98]"
+
             >
               Isso acontece comigo
             </Button>

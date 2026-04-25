@@ -78,7 +78,7 @@ export default function Features() {
             geist.className,
           )}
         >
-          A Etz.org cria sistemas inteligentes que trabalham pelo seu negocio.
+          A Etz.org cria sistemas inteligentes que trabalham pelo seu negócio.
         </h2>
         <FollowerPointerCard
           title={
@@ -97,7 +97,7 @@ export default function Features() {
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 whileHover={{
                   scale: 1.02,
                   borderColor: "rgba(96, 191, 164, 0.55)",
@@ -109,7 +109,7 @@ export default function Features() {
                   <h3 className="text-2xl leading-none font-semibold tracking-tight">Agentes de IA</h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
                     <p className="max-w-[460px]">
-                      Atendimento, vendas e suporte automaticos
+                      Atendimento, vendas e suporte automáticos
                     </p>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function Features() {
                     {/* Background Image */}
                     <div className="absolute inset-0">
                       <img
-                        src="https://framerusercontent.com/images/UjqUIiBHmIcSH9vos9HlG2BF4bo.png"
+                        src="/features-img.png"
                         alt="Arrow-CoreExchange"
                         className="w-full h-full object-cover rounded-xl"
                       />
@@ -207,14 +207,14 @@ export default function Features() {
 
                         {/* Center Logo */}
                         <motion.div
-                          className="w-16 h-16 border border-gray-300 rounded-lg overflow-hidden shadow-lg"
+                          className="mr-3.5 w-20 h-20 rounded-md overflow-hidden shadow-lg"
                           initial={{ opacity: 1, scale: 1 }}
                           animate={isCliHovering ? { scale: [1, 1.1, 1] } : { scale: 1 }}
                           transition={{ duration: 0.6, ease: "easeOut" }}
                           whileHover={{ scale: 1.1, rotate: 5 }}
                         >
                           <img
-                            src="https://framerusercontent.com/images/q43ivjLz67lXhWf6TKfLIh0FY.png"
+                            src="/etz-logo.png"
                             alt="Logo"
                             className="w-full h-full object-cover"
                           />
@@ -285,7 +285,7 @@ export default function Features() {
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 whileHover={{
                   scale: 1.02,
                   borderColor: "rgba(96, 191, 164, 0.55)",
@@ -341,7 +341,7 @@ export default function Features() {
                 onMouseLeave={() => setIsFeature3Hovering(false)}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.5, delay: 1.0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 whileHover={{
                   scale: 1.02,
                   borderColor: "rgba(96, 191, 164, 0.55)",
@@ -353,7 +353,7 @@ export default function Features() {
                   <h3 className="text-2xl leading-none font-semibold tracking-tight">Painel de resultados</h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
                     <p className="max-w-[460px]">
-                      Dados claros, decisoes rapidas
+                      Dados claros, decisões rápidas
                     </p>
                   </div>
                 </div>
@@ -363,7 +363,7 @@ export default function Features() {
                       <div className="p-4">
                         <textarea
                           className="min-h-[100px] w-full resize-none border-none bg-transparent text-base leading-relaxed text-[#0D261F] placeholder:text-[#4D6B63] focus:outline-none"
-                          placeholder="Descreva a automacao ou o painel que voce precisa..."
+                          placeholder="Descreva a automação ou o painel que você precisa..."
                           value={inputValue}
                           onChange={(e) => setInputValue(e.target.value)}
                           onKeyDown={handleKeyDown}
@@ -436,7 +436,7 @@ export default function Features() {
                 onMouseLeave={() => setIsFeature4Hovering(false)}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.5, delay: 1.0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 whileHover={{
                   rotateY: 5,
                   rotateX: 2,
@@ -449,7 +449,7 @@ export default function Features() {
                   <h3 className="text-2xl leading-none font-semibold tracking-tight">Landing pages inteligentes</h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
                     <p className="max-w-[460px]">
-                      Captacao de leads integrada a IA
+                      Captação de leads integrada a IA
                     </p>
                   </div>
                 </div>
@@ -479,7 +479,7 @@ export default function Features() {
           </p>
           <Button
             onClick={scrollToPromo}
-            className="bg-[#7FF20C] px-8 py-6 text-lg text-[#0D261F] shadow-[0_14px_30px_rgba(127,242,12,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#C1F277]"
+            className="h-14 rounded-lg bg-[#FFF] px-8 text-lg font-bold tracking-[0.01em] text-[#1C4259] shadow-[0_16px_36px_rgba(13,38,31,0.22)] ring-1 ring-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:border-[#C1F277] hover:text-[#FFF] hover:bg-[#12382E] hover:shadow-[0_20px_44px_rgba(13,38,31,0.30),0_0_0_4px_rgba(127,242,12,0.10)] active:translate-y-0 active:scale-[0.98]"
           >
             Quero esse sistema
           </Button>
