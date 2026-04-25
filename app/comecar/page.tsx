@@ -18,7 +18,7 @@ const serviceOptions = [
   { value: "outro", label: "Outro" },
 ]
 
-const whatsappUrl = ""
+const whatsappUrl = "https://wa.me/5561998600622"
 
 export default function ComecarPage() {
   const [name, setName] = useState("")
