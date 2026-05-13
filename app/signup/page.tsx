@@ -80,7 +80,7 @@ export default function SignupPage() {
             </div>
           </Link>
           <h1 className="mb-2 text-3xl font-bold text-[#0D261F]">Create account</h1>
-          <p className="text-[#4D6B63]">Junte-se a empresas que escalam com a Pandafy</p>
+          <p className="text-[#4D6B63]">Junte-se a empresas que escalam com a Etz</p>
         </div>
 
         {/* Signup Form */}

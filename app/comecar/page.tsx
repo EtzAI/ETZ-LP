@@ -54,7 +54,7 @@ export default function ComecarPage() {
           <div className="inline-flex items-center rounded-full border border-[#60BFA4]/30 bg-white px-4 py-2 shadow-[0_10px_30px_rgba(28,66,89,0.08)]">
             <img
               src="/pandafy-logo-sem-fundo.png"
-              alt="Pandafy"
+              alt="Etz"
               width={112}
               height={28}
               className="h-7 w-auto select-none"
@@ -76,7 +76,7 @@ export default function ComecarPage() {
             <div className="space-y-8">
               <div className="max-w-2xl space-y-4">
                 <span className="inline-flex items-center rounded-full border border-[#60BFA4]/30 bg-[#EEF8F5] px-4 py-2 text-sm font-medium text-[#1C4259]">
-                  Comece sua conversa com a Pandafy
+                  Comece sua conversa com a Etz
                 </span>
                 <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                   Conte o que sua empresa precisa e aceleramos o próximo passo.
