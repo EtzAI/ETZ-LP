@@ -61,7 +61,7 @@ export default function Home() {
           <a className={`z-50 flex items-center transition-all duration-300 ${isScrolled ? "ml-4" : ""}`} href="/">
             <img
               src="/pandafy-logo-sem-fundo.png"
-              alt="Etz"
+              alt="Pandafy"
               width={140}
               height={40}
               className="h-10 w-auto select-none"
@@ -94,7 +94,7 @@ export default function Home() {
           <a className="flex items-center" href="/">
             <img
               src="/pandafy-logo-sem-fundo.png"
-              alt="Etz"
+              alt="Pandafy"
               width={112}
               height={32}
               className="h-8 w-auto select-none"

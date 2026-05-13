@@ -17,51 +17,49 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Etz — IA, Automações e Software sob Medida",
+  title: "Pandafy — IA, Automações e Software sob Medida",
   description:
     "Soluções inteligentes em IA, automações e software sob medida para empresas que querem escalar com eficiência, performance e inovação.",
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.etzai.com.br",
+    canonical: "https://www.pandafy.com.br",
   },
   openGraph: {
-    title: "Etz — IA, Automações e Software sob Medida",
+    title: "Pandafy — IA, Automações e Software sob Medida",
     description:
       "Soluções inteligentes em IA, automações e software sob medida para empresas que querem escalar com eficiência, performance e inovação.",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.etzai.com.br",
-    siteName: "Etz",
+    url: "https://www.pandafy.com.br",
+    siteName: "Pandafy",
     locale: "pt_BR",
     type: "website",
   },
-  generator: "Etz",
+  generator: "Pandafy",
 }
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.etzai.com.br"
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      name: "Etz",
-      url: siteUrl,
+      "@id": "https://www.pandafy.com.br/#organization",
+      name: "Pandafy",
+      url: "https://www.pandafy.com.br",
       description:
         "Soluções inteligentes em IA, automações e software sob medida para empresas que querem escalar com eficiência, performance e inovação.",
       serviceType: ["Agentes de IA", "Automações de processo", "Software sob medida"],
     },
     {
       "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      url: siteUrl,
-      name: "Etz",
-      publisher: { "@id": `${siteUrl}/#organization` },
+      "@id": "https://www.pandafy.com.br/#website",
+      url: "https://www.pandafy.com.br",
+      name: "Pandafy",
+      publisher: { "@id": "https://www.pandafy.com.br/#organization" },
       inLanguage: "pt-BR",
     },
     {
       "@type": "Service",
-      "@id": `${siteUrl}/#service`,
+      "@id": "https://www.pandafy.com.br/#service",
       name: "IA, automações e software sob medida",
-      provider: { "@id": `${siteUrl}/#organization` },
+      provider: { "@id": "https://www.pandafy.com.br/#organization" },
       areaServed: "BR",
       serviceType: "Agentes de IA, automações de processo e software sob medida",
       description:
